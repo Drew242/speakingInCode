@@ -1,0 +1,19 @@
+body {
+  background-color: #000000;
+  color: #faba08;
+  padding: 1%;
+  margin: 1%;
+}
+
+.landing {
+  text-align: center;
+}
+
+.enter {
+  text-align: center;
+}
+
+.buttonStart {
+  padding: 2%;
+  font-size: 1.5em; 
+}

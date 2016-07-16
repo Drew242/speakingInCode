@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="speakCode">
+  <head>
+    <title>Speaking in Code</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'/>
+    <link rel='stylesheet' href='styles/main.css'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js'></script>
+    <script src='scripts/app.js'></script>
+  </head>
+
+    <body class='container' ng-controller="codeCtrl as code">
+
+      <div class="header">
+        <ul class="nav nav-pills pull-right" >
+          <li><a href="/#/">Home</a></li>
+          <li><a href="/#/about">About</a></li>
+          <li><a href="/#/setup">Setup</a></li>
+        </ul>
+        <h3 class="text-muted">{{ code.locationPath }}</h3>
+      </div>
+
+      <div ng-view=''>
+
+      </div>
+
+    </body>
+
+</html>
