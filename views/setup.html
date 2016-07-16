@@ -1,28 +1,36 @@
 <div class='col-lg-8 col-lg-offset-2 setup' ng-controller='setupCtrl as setup'>
-  <h2>{{ setup.text }}</h2>
+  <h2 class='header'>{{ setup.text }}</h2>
 
-  <form class='form-horizontal teams'>
-    <div class="form-group">
-      <div class='input-group'>
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-success">+</button>
-        </span>
-        <input type="text" class="form-control" id="teamName" placeholder="Fanny Bandits">
+  <div class='col-lg-8 col-lg-offset-2'>
+    <form class='form-horizontal teams'>
+      <div class="form-group">
+        <div class='input-group'>
+          <span class="input-group-btn">
+            <button class="btn btn-success" ng-click="setup.addTeam(setup.team1)">+</button>
+          </span>
+          <input type="text" class="form-control" placeholder="Fanny Bandits" ng-model='setup.team1'>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class='input-group'>
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-success">+</button>
-        </span>
-        <input type="text" class="form-control" id="teamName" placeholder="Titty Twisters">
+      <div class="form-group">
+        <div class='input-group'>
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-success" ng-click="setup.addTeam(setup.team2)">+</button>
+          </span>
+          <input type="text" class="form-control" placeholder="Titty Twisters" ng-model='setup.team2'>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class='input-group'>
-          <button type="submit" class="btn btn-success pull-left">+</button>
+      <div class="form-group">
+        <div class='input-group'>
+          <button class="btn btn-success pull-left">+</button>
+        </div>
       </div>
-    </div>
-  </form>
-  <button class='btn btn-danger ready'>{{ setup.ready }}</button>
+    </form>
+  </div>
+
+  <div class='col-lg-6 col-lg-offset-3'>
+    <a href='/#/game'>
+      <button class='btn btn-danger ready'>{{ setup.ready }}</button>
+    </a>
+  </div>
+
 </div>

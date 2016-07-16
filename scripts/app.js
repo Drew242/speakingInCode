@@ -40,6 +40,30 @@ function navCtrl( $scope, $location ) {
 
 }
 
+// Team Factory
+
+angular.module('speakCode')
+  .factory('teamFactory', teamFactory)
+
+function teamFactory() {
+
+  var teamPoints = [];
+
+  function set(data) {
+    teamPoints.push(data);
+  }
+
+  function get() {
+    return teamPoints;
+  }
+
+  return {
+    set: set,
+    get: get
+  }
+
+}
+
 // About controller
 
 angular.module('speakCode')
@@ -51,7 +75,7 @@ function aboutCtrl() {
   about.text = 'Joe London is a Pirate';
 }
 
-// code Controller
+// Code Controller
 
 angular.module('speakCode')
   .controller('codeCtrl', codeCtrl);
@@ -66,22 +90,42 @@ function codeCtrl() {
 // Game Controller
 
 angular.module('speakCode')
-  .controller('gameCtrl', gameCtrl);
+  .controller('gameCtrl', [
+    'teamFactory',
+    gameCtrl
+  ]);
 
-function gameCtrl() {
+function gameCtrl(teamFactory) {
   var game = this;
 
+  game.grabTeam = teamFactory.get();
   game.banner = 'Welcome to the ThunderDome!!';
 }
 
 // Setup Controller
 
 angular.module('speakCode')
-  .controller('setupCtrl', setupCtrl);
+  .controller('setupCtrl', [
+    'teamFactory',
+    setupCtrl
+  ]);
 
 function setupCtrl() {
   var setup = this;
+  var teams = {};
 
+  setup.set = teamFactory;
+  setup.team1 = '';
+  setup.team2 = '';
   setup.text = "Moderator, please enter Teams";
   setup.ready = "READY!"
+
+  setup.addTeam = function(team) {
+    if (team) {
+      teams[team] = 0;
+      console.log(teamFactory);
+      setup.set('boobs');
+    }
+    console.log(teams);
+  }
 }
