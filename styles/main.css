@@ -5,6 +5,19 @@ body {
   margin: 1%;
 }
 
+.header {
+  margin-bottom: 1%;
+  font-size: 1.5em;
+}
+
+a {
+  color: #faba08;
+}
+
+a:hover {
+  color: #000000;
+}
+
 .landing {
   text-align: center;
 }
@@ -15,5 +28,19 @@ body {
 
 .buttonStart {
   padding: 2%;
-  font-size: 1.5em; 
+  font-size: 1.5em;
+}
+
+.about, .game, .setup {
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+  color: #faba08;
+  font-size: 1.5em;
+}
+
+.hook {
+  height: 40%;
+  width: 40%;
+  margin-bottom: 2%;
 }
