@@ -36,11 +36,21 @@ a:hover {
   text-align: center;
   background-color: #ddd;
   color: #faba08;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .hook {
   height: 40%;
   width: 40%;
+  margin-bottom: 2%;
+}
+
+.teams {
+  color: #000000;
+  margin-top: 2%;
+  padding: 3%;
+}
+
+.ready {
   margin-bottom: 2%;
 }

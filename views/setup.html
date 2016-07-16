@@ -1,3 +1,28 @@
 <div class='col-lg-8 col-lg-offset-2 setup' ng-controller='setupCtrl as setup'>
   <h2>{{ setup.text }}</h2>
+
+  <form class='form-horizontal teams'>
+    <div class="form-group">
+      <div class='input-group'>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-success">+</button>
+        </span>
+        <input type="text" class="form-control" id="teamName" placeholder="Fanny Bandits">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='input-group'>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-success">+</button>
+        </span>
+        <input type="text" class="form-control" id="teamName" placeholder="Titty Twisters">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='input-group'>
+          <button type="submit" class="btn btn-success pull-left">+</button>
+      </div>
+    </div>
+  </form>
+  <button class='btn btn-danger ready'>{{ setup.ready }}</button>
 </div>

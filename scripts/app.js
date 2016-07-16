@@ -82,5 +82,6 @@ angular.module('speakCode')
 function setupCtrl() {
   var setup = this;
 
-  setup.text = "Moderator, please enter team names"; 
+  setup.text = "Moderator, please enter Teams";
+  setup.ready = "READY!"
 }
