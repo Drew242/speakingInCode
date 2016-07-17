@@ -47,10 +47,14 @@ a:hover {
   padding: 3%;
 }
 
-.biggerFont {
-  height: 30em;
+.table {
+  color: #000000;
 }
 
 .ready {
   margin-bottom: 2%;
+}
+
+.difficulties {
+  padding: 4%;
 }

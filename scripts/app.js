@@ -47,14 +47,19 @@ angular.module('speakCode')
 
 function teamFactory() {
 
-  var teamPoints = [];
+  var team1 = "";
+  var team2 = "";
 
   function set(data) {
-    teamPoints.push(data);
+    if (!team1) {
+      team1 = data;
+    } else {
+      team2 = data;
+    }
   }
 
   function get() {
-    return teamPoints;
+    return team1, team2;
   }
 
   return {
@@ -98,8 +103,14 @@ angular.module('speakCode')
 function gameCtrl(teamFactory) {
   var game = this;
 
-  game.grabTeam = teamFactory.get();
-  game.banner = 'Welcome to the ThunderDome!!';
+  game.banner    = 'Welcome to the ThunderDome!!';
+  game.grabTeams = teamFactory.get();
+
+  game.pointPrompt = function(i) {
+    console.log('points clicked');
+    var points = prompt('How many points??');
+    document.getElementById('score-' + i).innerHTML = points
+  }
 }
 
 // Setup Controller
@@ -110,11 +121,10 @@ angular.module('speakCode')
     setupCtrl
   ]);
 
-function setupCtrl() {
+function setupCtrl(teamFactory) {
   var setup = this;
-  var teams = {};
+  var teams = [];
 
-  setup.set = teamFactory;
   setup.team1 = '';
   setup.team2 = '';
   setup.text = "Moderator, please enter Teams";
@@ -122,9 +132,8 @@ function setupCtrl() {
 
   setup.addTeam = function(team) {
     if (team) {
-      teams[team] = 0;
-      console.log(teamFactory);
-      setup.set('boobs');
+      teams.push(team);
+      teamFactory.set(teams);
     }
     console.log(teams);
   }

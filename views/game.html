@@ -1,6 +1,33 @@
 <div class='col-lg-10 col-lg-offset-1 game' ng-controller='gameCtrl as game'>
   <h1>{{ game.banner }}</h1>
-  <div class='col-lg-10 col-lg-offset-1 gamePlay'>
-    <h1>{{ game.grabTeam }}</h1>
+  <div class='col-lg-10 col-lg-offset-1'>
+    <table class='table'>
+      <tr>
+        <td ng-repeat='t in game.grabTeams track by $index'>
+          <div id="team-{{$index}}">
+            {{ t }}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td ng-repeat='n in game.grabTeams track by $index'>
+          <div id="score-{{$index}}">
+            {{ 0 }}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td ng-repeat='score in game.grabTeams track by $index'>
+          <div id='btn-{{$index}}'>
+            <button class='btn btn-success' ng-click='game.pointPrompt($index)'>+</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class='col-lg-10 col-lg-offset-1 difficulties'>
+      <button class='btn btn-info'>Easy</button>
+      <button class='btn btn-warning'>Medium</button>
+      <button class='btn btn-danger'>Hard</button>
+    </div>
   </div>
 </div>
