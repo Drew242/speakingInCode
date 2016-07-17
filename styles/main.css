@@ -58,3 +58,7 @@ a:hover {
 .difficulties {
   padding: 4%;
 }
+
+.modal-body {
+  padding: 15%; 
+}

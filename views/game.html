@@ -25,9 +25,37 @@
       </tr>
     </table>
     <div class='col-lg-10 col-lg-offset-1 difficulties'>
-      <button class='btn btn-info'>Easy</button>
-      <button class='btn btn-warning'>Medium</button>
-      <button class='btn btn-danger'>Hard</button>
+      <button class='btn btn-info' ng-click='game.easy()' data-toggle="modal" data-target="#myModal">
+        Easy
+      </button>
+      <button class='btn btn-warning' ng-click='game.medium()' data-toggle="modal" data-target="#myModal">
+        Medium
+      </button>
+      <button class='btn btn-danger' ng-click='game.hard()' data-toggle="modal" data-target="#myModal">
+        Hard
+      </button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Problem</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{ game.randomProblem }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Award Points
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
