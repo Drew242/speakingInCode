@@ -11,6 +11,10 @@ body {
   font-size: 1.75em;
 }
 
+.subheader {
+  color: #000000; 
+}
+
 a {
   color: #faba08;
 }
@@ -60,5 +64,5 @@ a:hover {
 }
 
 .modal-body {
-  padding: 15%; 
+  padding: 15%;
 }

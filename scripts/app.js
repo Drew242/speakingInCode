@@ -209,6 +209,7 @@ function setupCtrl(teamFactory) {
   var setup = this;
   var teams = [];
 
+  setup.teams = teams
   setup.team1 = '';
   setup.team2 = '';
   setup.text = "Moderator, please enter Teams";
